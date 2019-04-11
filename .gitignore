@@ -47,3 +47,14 @@ bower.json
 # Ignore node_modules
 node_modules/
 
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+.idea
+.rubocop.yml
+.rubocop_disabled.yml
+.rubocop_enabled.yml
+/config/credentials.yml.enc
+/config/storage.yml
+/config/database.yml
