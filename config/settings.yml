@@ -1,0 +1,39 @@
+model:
+  user:
+    email_max_length: 254
+    firstname_max_length: 30
+    lastname_max_length: 30
+  supplier:
+    company_name_maxlength: 50
+    contact_name_maxlength: 50
+    homepage_maxlength: 45
+    address_maxlength: 100
+    city_maxlength: 30
+  sense:
+    name_maxlength: 45
+  role:
+    name_maxlength: 150
+  product:
+    name_maxlength: 50
+    qit_maxlength: 20
+    upper_bound: 1_000_000
+    lower_bound: 0
+    concentration_maxlength: 50
+    product_style_maxlength: 50
+    weight_upper_bound: 1000
+    description_maxlength: 500
+    picture_url_maxlength: 100
+  brand:
+    name_maxlength: 45
+    desc_maxlength: 20
+    desc_minlength: 3
+    homepage_maxlength: 200
+    country_maxlength: 50
+  category:
+    name_maxlength: 50
+    desc_maxlength: 300
+  order:
+    ship_addr_maxlength: 300
+    ship_name_maxlength: 50
+    ship_city_maxlength: 50
+
