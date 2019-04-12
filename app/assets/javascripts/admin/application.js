@@ -12,11 +12,8 @@
 //
 //= require jquery
 //= require jquery-ui
-//= require popper.min
-//= require owl.carousel.min
-//= require jquery.magnific-popup.min
-//= require aos
-//= require main
-//= require bootstrap-sprockets
+//= require jquery.slimscroll.min
+//= require bootstrap-sprockets 
 //= require activestorage
 //= require turbolinks
+//= require app

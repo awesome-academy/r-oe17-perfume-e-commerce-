@@ -30,4 +30,40 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  views:
+    layout:
+      admin:
+        title: "AdminLTE 2 | Dashboard"
+        footer_copyright: "Copyright &copy; 2019"
+        footer_company: "Company"
+        footer_endline: "All rights reserved."
+        header_sign_out: "Sign out"
+        header_profile: "Profile"
+        header_name: "Tony Stark"
+        sidebar_name: "Tony Stark"
+        sidebar_status: "Online"
+        sidebar_menu_title: "Manage"
+      client:
+        title: "Luxury Perfume"
+        nav_home: "Home"
+        nav_about: "About"
+        nav_contact: "Contact"
+        footer_nav: "Navigation"
+        footer_cart: "Shopping Cart"
+        footer_feature: "Features"
+        footer_contact:
+          title: "Contact Info"
+          address: "203 Fake St. Mountain View, San Francisco, California, USA"
+          phone: "+2 392 3929 210"
+          email: "emailaddress@domain.com"
+        contact:
+          title: "Get In Touch"
+          first_name: "First Name"
+          last_name: "Last Name"
+          email: "Email"
+          subject: "Subject"
+          message: "Message"
+        about:
+          title: "About"
+          content: "This is about page"
+

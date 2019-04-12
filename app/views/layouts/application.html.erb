@@ -4,12 +4,23 @@
     <title>ROe17PerfumeECommerce</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= stylesheet_link_tag    "font", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
-
   <body>
-    <%= yield %>
+  <div class="site-wrap">
+    <%= render "layouts/navbar" %>
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+    <%= render "layouts/footer" %>
+  </div>
   </body>
 </html>
