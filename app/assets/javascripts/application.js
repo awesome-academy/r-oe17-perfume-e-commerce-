@@ -11,11 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui
+//= require rails-ujs
+//= require jquery-ui.min
 //= require popper.min
 //= require owl.carousel.min
 //= require jquery.magnific-popup.min
-//= require aos
 //= require main
 //= require bootstrap-sprockets
 //= require activestorage

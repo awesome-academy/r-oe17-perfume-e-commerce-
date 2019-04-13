@@ -3,6 +3,7 @@ model:
     email_max_length: 254
     firstname_max_length: 30
     lastname_max_length: 30
+    password_min_length: 3
   supplier:
     company_name_maxlength: 50
     contact_name_maxlength: 50
@@ -36,4 +37,3 @@ model:
     ship_addr_maxlength: 300
     ship_name_maxlength: 50
     ship_city_maxlength: 50
-

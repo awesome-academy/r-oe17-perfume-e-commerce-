@@ -2,6 +2,7 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
 
   has_and_belongs_to_many :roles
+  has_secure_password
 
   validates :email, format: {with: VALID_EMAIL_REGEX},
             length: {maximum: Settings.model.user.email_max_length},
@@ -11,6 +12,7 @@ class User < ApplicationRecord
             presence: true
   validates :last_name, length: {maximum: Settings.model.user.lastname_max_length},
             presence: true
+  validates :password, presence: true, length: {minimum: Settings.model.user.password_min_length}
 
   before_save :downcase_email, :set_date_joined
 
@@ -20,6 +22,10 @@ class User < ApplicationRecord
 
   def get_fullname
     "#{first_name} #{last_name}"
+  end
+
+  def admin? user
+    user == self && user.is_admin == true
   end
 
   private

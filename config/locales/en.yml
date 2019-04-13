@@ -39,15 +39,20 @@ en:
         footer_endline: "All rights reserved."
         header_sign_out: "Sign out"
         header_profile: "Profile"
-        header_name: "Tony Stark"
-        sidebar_name: "Tony Stark"
         sidebar_status: "Online"
-        sidebar_menu_title: "Manage"
+        sidebar_menu_title: "STORE MANAGEMENT"
+        single_title: "Link"
+        treeview_title: "Multilevel"
+        treeview_child: "Link in level 2"
       client:
-        title: "Luxury Perfume"
+        main_title: "Luxury Perfume"
         nav_home: "Home"
         nav_about: "About"
         nav_contact: "Contact"
+        nav_profile: "Profile"
+        nav_admin: "Admin Panel"
+        nav_login: "Login"
+        nav_logout: "Logout"
         footer_nav: "Navigation"
         footer_cart: "Shopping Cart"
         footer_feature: "Features"
@@ -66,4 +71,20 @@ en:
         about:
           title: "About"
           content: "This is about page"
-
+        sign_up:
+          new_user: "New user?"
+          sign_up_now: "Sign up now!"
+    shared:
+      error:
+        form_contain: "The form contains"
+    user:
+      new:
+        sign_up: "Sign up"
+        create_account: "Create my account"
+  controllers:
+    admin:
+      user:
+        flash_user_doesnt_exits: "User doesn't exist"
+    client:
+      session:
+        flash_invalid_login: "Invalid email/password combination"
