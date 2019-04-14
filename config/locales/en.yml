@@ -81,6 +81,9 @@ en:
       new:
         sign_up: "Sign up"
         create_account: "Create my account"
+    session:
+      new:
+        remember_me: "Remember me on this computer"
   controllers:
     admin:
       user:
@@ -88,3 +91,17 @@ en:
     client:
       session:
         flash_invalid_login: "Invalid email/password combination"
+        mess_not_activated: "Account not activated. "
+        mess_not_activated2: "Check your email for the activation link."
+      user:
+        remind_activation: "Please check your email to activate your account."
+    system:
+      account_activation:
+        activated: "Account activated!"
+        not_activated: "Invalid activation link"
+  mailer:
+    sub_account_activation: "Account Activation"
+    views:
+      greeting: "Hi"
+      welcome_talk: "Welcome to the Sample App! Click on the link below to activate your account:"
+      activate: "Activate"

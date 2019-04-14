@@ -1,0 +1,8 @@
+<p><%= t "mailer.views.greeting" %> <%= @user.get_fullname %>,</p>
+
+<p>
+<% t "mailer.views.welcome_talk" %>
+</p>
+
+<%= link_to t("mailer.views.activate"), edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
