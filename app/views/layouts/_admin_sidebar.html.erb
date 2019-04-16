@@ -32,27 +32,14 @@
     <ul class="sidebar-menu">
       <li class="header"><%= t "views.admin.layout.sidebar_menu_title" %></li>
         <!-- Optionally, you can add icons to the links -->
-      <li class="active">
-        <a href="#">
-          <i class='fa fa-link'></i>
-          <span><%= t "views.admin.layout.single_title" %></span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='fa fa-link'></i>
-          <span><%= t "views.admin.layout.single_title" %></span>
-        </a>
-      </li>
       <li class="treeview">
         <a href="#">
           <i class='fa fa-link'></i>
-          <span><%= t "views.admin.layout.treeview_title"%></span>
+          <span><%= t "views.layout.admin.catalog_treeview.catalog"%></span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><%= link_to "Category", admin_categories_path %></li>
-          <li><a href="#"><%= t "views.admin.layout.treeview_child" %></a></li>
+          <li><%= link_to t("views.layout.admin.catalog_treeview.category"), admin_categories_path %></li>
         </ul>
       </li>
     </ul><!-- /.sidebar-menu -->
