@@ -11,9 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui
+//= require rails-ujs
+//= require jquery-ui.min
 //= require jquery.slimscroll.min
-//= require bootstrap-sprockets 
+//= require bootstrap-sprockets
 //= require activestorage
 //= require turbolinks
 //= require app

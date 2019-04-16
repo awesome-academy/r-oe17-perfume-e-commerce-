@@ -12,7 +12,7 @@
 
         <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
           <div class="site-logo">
-            <a href="index.html" class="js-logo-clone"><%= t "views.layout.client.title" %></a>
+            <a href="index.html" class="js-logo-clone"><%= t "views.layout.client.main_title" %></a>
           </div>
         </div>
 
@@ -44,7 +44,20 @@
         <li>
           <%= link_to t("views.layout.client.about.title"), about_path %>
         </li>
-        <li><%= link_to t("views.layout.client.nav_contact"), contact_path %></li>
+        <li>
+          <%= link_to t("views.layout.client.nav_contact"), contact_path %>
+        </li>
+        <% if logged_in? %>
+          <li><%= link_to t("views.layout.client.nav_profile"), root_path %></li>
+          <% if @current_user.admin? @current_user %>
+            <li><%= link_to t("views.layout.client.nav_admin") , admin_root_path %></li>
+          <% end %>
+          <li><%= link_to t("views.layout.client.nav_logout"), logout_sessions_path, method: :delete%></li>
+        <% else %>
+          <li>
+            <%= link_to t("views.layout.client.nav_login"), login_sessions_path %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav>
