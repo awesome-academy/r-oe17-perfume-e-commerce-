@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get "contact", to: "home#contact"
   get "about", to: "home#about"
 
+  resources :account_activations, only: [:edit]
+
   resources :users, except: [:destroy] do
     collection do
       get  "/signup",  to: "users#new"
