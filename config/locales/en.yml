@@ -30,6 +30,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  admin:
+    categories:
+      create:
+        create_success: Create succesfully
+      update:
+        update_success: Update successfully
+      destroy:
+        delete_success: Delete succesfully
+        delete_unsuccess: Delete unsuccessfully
+        has_product: This category has some products
+      set_category_invalid: Category doesn't existed
   views:
     admin:
       category:
@@ -45,7 +56,6 @@ en:
           b_submit: "Submit"
         edit:
           p_title: "Update category"
-
     layout:
       admin:
         title: "AdminLTE 2 | Dashboard"
@@ -108,10 +118,6 @@ en:
         flash_alert_login: "Please Login"
       user:
         flash_user_doesnt_exits: "User doesn't exist"
-      category:
-        create_success: "Create succesfully"
-        update_success: "Update successfully"
-        set_category_invalid: "Category doesn't existed"
     client:
       session:
         flash_invalid_login: "Invalid email/password combination"
