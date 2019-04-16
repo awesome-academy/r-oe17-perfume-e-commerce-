@@ -1,0 +1,17 @@
+<h2><%= t "views.admin.category.index.title"%></h2>
+<div class="div">
+  <%= link_to t("views.admin.category.index.add_new_category"), new_admin_category_path, class: "btn btn-primary"%>
+</div>
+<%= paginate @categories%>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= t "views.admin.category.index.h_name" %></th>
+      <th><%= t "views.admin.category.index.h_description" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @categories %>
+  </tbody>
+</table>
+<%= paginate @categories %>

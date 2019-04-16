@@ -67,8 +67,17 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
-  def admin? user
-    user == self && user.is_admin == true
+  def in_role? name
+    role_list = Role.by_id(id).map(&:role_name)
+    role_list.include? name
+  end
+
+  def is_mod?
+    in_role? "Moderator"
+  end
+
+  def is_admin?
+    in_role? "Administrator"
   end
 
   private

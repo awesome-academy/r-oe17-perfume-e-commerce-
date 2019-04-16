@@ -39,6 +39,8 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "adminlte2-rails"
 gem "jquery-rails"
 gem "figaro"
+gem "kaminari"
+gem "faker"
 
 # Config
 gem "config"

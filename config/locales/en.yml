@@ -31,6 +31,16 @@
 
 en:
   views:
+    admin:
+      category:
+        index:
+          title: "List of Category"
+          add_new_category: "Add new category"
+          h_name: "Name"
+          h_description: "Description"
+        new:
+          p_title: "Add new category"
+          b_submit: "Submit"
     layout:
       admin:
         title: "AdminLTE 2 | Dashboard"
@@ -86,8 +96,14 @@ en:
         remember_me: "Remember me on this computer"
   controllers:
     admin:
+      base:
+        admin: "Administrator"
+        mod: "Moderator"
+        flash_alert_login: "Please Login"
       user:
         flash_user_doesnt_exits: "User doesn't exist"
+      category:
+        create_success: "Create succesfully"
     client:
       session:
         flash_invalid_login: "Invalid email/password combination"

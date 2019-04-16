@@ -33,6 +33,7 @@ model:
   category:
     name_maxlength: 50
     desc_maxlength: 300
+    paginate_size: 5
   order:
     ship_addr_maxlength: 300
     ship_name_maxlength: 50
