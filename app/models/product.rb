@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
   VALID_PRICE_REGEX = /\A\d+(?:\.\d{2})?\z/.freeze
 
+  paginates_per Settings.model.product.paginate_size
+
   belongs_to :category
   belongs_to :supplier
   belongs_to :sense

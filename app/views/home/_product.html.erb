@@ -1,0 +1,12 @@
+<div class="col-sm-6 col-lg-4 mb-4">
+  <div class="block-4 text-center border">
+    <figure class="block-4-image">
+        <%= image_tag product.picture_url, class: "img-fluid" %>
+    </figure>
+    <div class="block-4-text p-4">
+      <h3><%= link_to product.product_name, "#"%></h3>
+      <p class="mb-0"><%= product.product_style %></p>
+      <p class="text-primary font-weight-bold">$<%= product.unit_price %></p>
+    </div>
+  </div>
+</div>
