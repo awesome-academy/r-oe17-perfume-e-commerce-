@@ -1,4 +1,4 @@
-50.times do |n|
+30.times do |n|
 name  = "Example Category#{n+1}"
 description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.
  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -33,7 +33,7 @@ User.create!(username: "superuser",
   role_ids: 1
 )
 
-99.times do |n|
+20.times do |n|
   username = Faker::Games::Dota.hero
   first_name = "Example"
   last_name = "User#{n + 1}"

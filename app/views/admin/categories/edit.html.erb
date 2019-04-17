@@ -1,8 +1,8 @@
-<% provide(:path, admin_categories_path) %>
+<% provide(:path, admin_category_path(@category)) %>
 <% provide(:button_text, t("views.admin.category.new.b_submit")) %>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <%= t "views.admin.category.new.p_title"%>
+    <h2><%= t "views.admin.category.edit.p_title" %></h2>
   </div>
   <div class="panel-body">
     <%= render "form" %>

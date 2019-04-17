@@ -38,9 +38,14 @@ en:
           add_new_category: "Add new category"
           h_name: "Name"
           h_description: "Description"
+          b_edit: "Edit"
+          a_delete: "Are you sure?"
         new:
           p_title: "Add new category"
           b_submit: "Submit"
+        edit:
+          p_title: "Update category"
+
     layout:
       admin:
         title: "AdminLTE 2 | Dashboard"
@@ -52,8 +57,9 @@ en:
         sidebar_status: "Online"
         sidebar_menu_title: "STORE MANAGEMENT"
         single_title: "Link"
-        treeview_title: "Multilevel"
-        treeview_child: "Link in level 2"
+        catalog_treeview:
+          catalog: "Catalog"
+          category: "Category"
       client:
         main_title: "Luxury Perfume"
         nav_home: "Home"
@@ -104,6 +110,8 @@ en:
         flash_user_doesnt_exits: "User doesn't exist"
       category:
         create_success: "Create succesfully"
+        update_success: "Update successfully"
+        set_category_invalid: "Category doesn't existed"
     client:
       session:
         flash_invalid_login: "Invalid email/password combination"
