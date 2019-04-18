@@ -14,7 +14,7 @@ class Product < ApplicationRecord
             presence: true
   validates :product_style, length: {maximum: Settings.model.product.product_style_maxlength}
   validates :picture_url, length: {maximum: Settings.model.product.picture_url_maxlength}
-  validates :quantity_per_init, length: {maximum: Setttings.model.product.qit_maxlength}
+  validates :quantity_per_init, length: {maximum: Settings.model.product.qit_maxlength}
   validates :unit_price, format: {with: VALID_PRICE_REGEX},
             numericality: {greater_than: Settings.model.product.lower_bound,
                            less_than: Settings.model.product.upper_bound}
