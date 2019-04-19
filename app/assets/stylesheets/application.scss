@@ -14,21 +14,12 @@
  *= require_self
  */
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import "bootstrap.min";
+@import "bootstrap/bootstrap-grid";
+@import "bootstrap/bootstrap-reboot";
 @import "magnific-popup";
 @import "jquery-ui";
 @import "owl.carousel.min";
 @import "owl.theme.default.min";
 @import "style";
 @import "font";
-
-@font-face {
-  font-family: 'Icomoon';
-  src:url('icomoon.eot');
-  src:url('icomoon.eot?#iefix') format('embedded-opentype'),
-  url('icomoon.svg#icomoon') format('svg'),
-  url('icomoon.woff') format('woff'),
-  url('icomoon.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}

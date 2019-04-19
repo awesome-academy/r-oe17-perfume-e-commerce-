@@ -2,62 +2,88 @@
   <div class="site-navbar-top">
     <div class="container">
       <div class="row align-items-center">
-
         <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
           <form action="" class="site-block-top-search">
             <span class="icon icon-search2"></span>
-            <input type="text" class="form-control border-0" placeholder="Search">
+            <input
+              type="text"
+              class="form-control border-0"
+              placeholder="Search"
+            />
           </form>
         </div>
 
         <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
           <div class="site-logo">
-            <a href="index.html" class="js-logo-clone"><%= t "views.layout.client.main_title" %></a>
+            <a href="index.html" class="js-logo-clone"><%= t "views.layout.client.main_title"%></a>
           </div>
         </div>
 
         <div class="col-6 col-md-4 order-3 order-md-3 text-right">
           <div class="site-top-icons">
             <ul>
-              <li><a href="#"><span class="icon icon-person"></span></a></li>
-              <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
+              <% if logged_in? %>
+              <li class="dropdown">
+                <a
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  ><span class="icon icon-person"></span
+                ></a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <%= link_to t("views.layout.client.nav_profile"), root_path, class: "dropdown-item" %>
+                  <% if @current_user.is_admin? %>
+                    <%= link_to t("views.layout.client.nav_admin") , admin_root_path, class: "dropdown-item" %>
+                  <% end %>
+                  <%= link_to t("views.layout.client.nav_logout"), logout_sessions_path, method: :delete, class: "dropdown-item"%>
+                </div>
+              </li>
+              <% else %>
+                <%= link_to t("views.layout.client.nav_login"), login_sessions_path %>
+              <% end %>
+              <li>
+                <a href="#"><span class="icon icon-heart-o"></span></a>
+              </li>
               <li>
                 <a href="cart.html" class="site-cart">
                   <span class="icon icon-shopping_cart"></span>
                   <span class="count">2</span>
                 </a>
               </li>
-              <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+              <li class="d-inline-block d-md-none ml-md-0">
+                <a href="#" class="site-menu-toggle js-menu-toggle"
+                  ><span class="icon-menu"></span
+                ></a>
+              </li>
             </ul>
           </div>
         </div>
-
       </div>
     </div>
   </div>
   <nav class="site-navigation text-right text-md-center" role="navigation">
     <div class="container">
       <ul class="site-menu js-clone-nav d-none d-md-block">
-        <li>
+        <li class="has-children active">
           <%= link_to t("views.layout.client.nav_home"), root_path %>
+          <ul class="dropdown">
+            <% @categories.top_level.each do |category| %>
+                <li class="has-children">
+                  <%= link_to category.category_name, "#" %>
+                  <ul class="dropdown">
+                    <% category.children.each do |child| %>
+                      <li><%= link_to child.category_name, "#" %></li>
+                    <% end %>
+                  </ul>
+                </li>
+            <% end %>
+          </ul>
         </li>
-        <li>
-          <%= link_to t("views.layout.client.about.title"), about_path %>
-        </li>
-        <li>
-          <%= link_to t("views.layout.client.nav_contact"), contact_path %>
-        </li>
-        <% if logged_in? %>
-          <li><%= link_to t("views.layout.client.nav_profile"), root_path %></li>
-          <% if @current_user.is_admin? %>
-            <li><%= link_to t("views.layout.client.nav_admin") , admin_root_path %></li>
-          <% end %>
-          <li><%= link_to t("views.layout.client.nav_logout"), logout_sessions_path, method: :delete%></li>
-        <% else %>
-          <li>
-            <%= link_to t("views.layout.client.nav_login"), login_sessions_path %>
-          </li>
-        <% end %>
+        <li><%= link_to t("views.layout.client.nav_about"), about_path %></li>
+        <li><%= link_to t("views.layout.client.nav_home"), contact_path %></li>
       </ul>
     </div>
   </nav>
