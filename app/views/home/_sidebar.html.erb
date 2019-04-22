@@ -1,0 +1,27 @@
+<div class="border p-4 rounded mb-4">
+  <h3 class="mb-3 h6 text-uppercase text-black d-block"><%= t ".category_title" %></h3>
+  <ul class="list-unstyled mb-0">
+    <% @categories.top_level.each do |c| %>
+      <li class="mb-1">
+        <%= link_to "#", class: "d-flex" do %>
+          <span><%= c.category_name.capitalize %></span>
+          <span class="text-black ml-auto"><%= c.descendent_products.length %></span>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="border p-4 rounded mb-4">
+  <div class="mb-4">
+    <h3 class="mb-3 h6 text-uppercase text-black d-block"><% t".filter_by_price "%></h3>
+    <div id="slider-range" class="border-primary"></div>
+    <input
+      type="text"
+      name="text"
+      id="amount"
+      class="form-control border-0 pl-0 bg-white"
+      disabled=""
+    />
+  </div>
+</div>

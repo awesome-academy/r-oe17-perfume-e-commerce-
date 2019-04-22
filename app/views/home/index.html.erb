@@ -1,1 +1,65 @@
+<div class="site-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-9 order-2">
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <div class="float-md-left mb-4">
+              <h2 class="text-black h5"><%= t ".shop_all"%></h2>
+            </div>
+            <div class="d-flex">
+              <div class="dropdown mr-1 ml-md-auto">
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm dropdown-toggle"
+                  id="dropdownMenuOffset"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <%= t ".latest"%>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                  <% @categories.top_level.each do |c| %>
+                    <%= link_to c.category_name, "#", class: "dropdown-item" %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="btn-group">
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm dropdown-toggle"
+                  id="dropdownMenuReference"
+                  data-toggle="dropdown"
+                >
+                  <%= t ".reference" %>
+                </button>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuReference"
+                >
+                  <%= sortable t(".product_name"),t(".atoz"), t(".asc") %>
+                  <%= sortable t(".product_name"),t(".ztoa"), t(".desc") %>
+                  <div class="dropdown-divider"></div>
+                  <%= sortable t(".unit_price"),t(".hightolow"), t(".desc") %>
+                  <%= sortable t(".unit_price"),t(".lowtohigh"), t(".asc") %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <%= paginate @products %>
+        </div>
+        <div class="row mb-5">
+          <%= render :partial => "product", collection: @products, as: :product %>
+        </div>
+        <div class="row mb-5"><%= paginate @products %></div>
+      </div>
 
+      <div class="col-md-3 order-1 mb-5 mb-md-0">
+        <%= render "sidebar" %>
+      </div>
+    </div>
+  </div>
+</div>

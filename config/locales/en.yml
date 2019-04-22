@@ -135,3 +135,20 @@ en:
       greeting: "Hi"
       welcome_talk: "Welcome to the Sample App! Click on the link below to activate your account:"
       activate: "Activate"
+  home:
+    sidebar:
+      category_title: Cateogries
+      filter_by_price: Filter By Price
+    index:
+      shop_all: Shop All
+      latest: Latest
+      reference: Reference
+      relevance: Relevance
+      atoz: Name, A to Z
+      ztoa: Name, Z to A
+      lowtohigh: Price, low to high
+      hightolow: Price, high to low
+      asc: "asc"
+      desc: "desc"
+      product_name: "product_name"
+      unit_price: "unit_price"

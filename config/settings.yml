@@ -24,6 +24,7 @@ model:
     weight_upper_bound: 1000
     description_maxlength: 500
     picture_url_maxlength: 100
+    paginate_size: 10
   brand:
     name_maxlength: 45
     desc_maxlength: 20
