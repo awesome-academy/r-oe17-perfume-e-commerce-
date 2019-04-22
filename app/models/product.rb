@@ -9,6 +9,10 @@ class Product < ApplicationRecord
   belongs_to :brand
   has_many :order_details
 
+  delegate :brand_name, to: :brand
+  delegate :company_name, to: :supplier
+  delegate :sense_name, to: :sense
+
   validates :concentration, length: {maximum: Settings.model.product.concentration_maxlength}
   validates :discontinue, default: false
   validates :description, length: {maximum: Settings.model.product.description_maxlength}

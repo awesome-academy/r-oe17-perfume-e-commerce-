@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :products, only: [:show]
+
   namespace :admin do
     root "home#index"
 

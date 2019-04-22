@@ -152,3 +152,20 @@ en:
       desc: "desc"
       product_name: "product_name"
       unit_price: "unit_price"
+  products:
+    show:
+      brand: "Brand: "
+      company: "Company: "
+      sense: "Sense: "
+      concentration: "Concentration: "
+      weight: "Weight: "
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"

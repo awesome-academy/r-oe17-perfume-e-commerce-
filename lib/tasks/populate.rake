@@ -72,6 +72,35 @@ namespace :populate do
     end
   end
 
+  desc "Seed Data Brand"
+  task seed_brand: :environment do
+    data_any? Brand
+    20.times do
+      brand_name = Faker::Verb.base
+      description = "This is description"
+      Brand.create!(brand_name: brand_name, description: description)
+    end
+  end
+
+  desc "Seed Data Supplier"
+  task seed_supplier: :environment do
+    data_any? Supplier
+    10.times do
+      company_name = Faker::Company.name
+      contact_name = Faker::Name.name
+      homepage = "https://google.com"
+      address = Faker::Address.street_address
+      city = Faker::Address.city
+      Supplier.create!(
+        company_name: company_name,
+        contact_name: contact_name,
+        homepage: homepage,
+        address: address,
+        city: city
+      )
+    end
+  end
+
   desc "Seed Data Product"
   task seed_product: :environment do
     data_any? Product
@@ -88,6 +117,10 @@ namespace :populate do
       weight = rand(100...500)
       description = Faker::Lorem.paragraph
       picture_url = Faker::LoremPixel.image("400x600")
+      category_id = rand(Category.first.id..Category.last.id)
+      brand_id = rand(Brand.first.id..Brand.last.id)
+      supplier_id = rand(Supplier.first.id..Supplier.last.id)
+      sense_id = rand(Sense.first.id..Sense.last.id)
       Product.create!(
         product_name: product_name,
         quantity_per_init: quantity_per_init,
@@ -100,7 +133,11 @@ namespace :populate do
         product_style: product_style,
         weight: weight,
         description: description,
-        picture_url: picture_url
+        picture_url: picture_url,
+        category_id: category_id,
+        brand_id: brand_id,
+        supplier_id: supplier_id,
+        sense_id: sense_id
       )
     end
   end
