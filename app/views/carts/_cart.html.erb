@@ -1,0 +1,39 @@
+<div id="shopping-cart" class="row mb-5">
+  <form class="col-md-12" method="post">
+    <div class="site-blocks-table">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="product-thumbnail"><%= t ".th_image" %></th>
+            <th class="product-name"><%= t ".th_name" %></th>
+            <th class="product-price"><%= t ".th_price" %></th>
+            <th class="product-quantity"><%= t ".th_quantity" %></th>
+            <th class="product-total"><%= t ".th_total" %></th>
+            <th class="product-remove"><%= t ".th_remove" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order_details.each do |order_detail| %>
+          <tr id="line-item">
+            <%= render "carts/cart_row", product: order_detail.product,
+            order_detail: order_detail, show_total: true %>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </form>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="row mb-5">
+      <div class="col-md-6">
+        <%= link_to "Continue Shopping", root_path, method: :get, class: "btn
+        btn-outline-primary btn-sm btn-block"%>
+      </div>
+    </div>
+  </div>
+  <div id="total-cost" class="col-md-6 pl-5">
+    <%= render "cart_total_cost" %>
+  </div>
+</div>
