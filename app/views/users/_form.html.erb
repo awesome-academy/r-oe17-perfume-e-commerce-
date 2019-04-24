@@ -1,0 +1,30 @@
+<%= form_with model: @user, local: true, url: yield(:path) do |f| %>
+<%= render "shared/error_messages", object: f.object %>
+
+<%= f.label :username %>
+<%= f.text_field :username, class: "form-control" %>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: "form-control" %>
+  </div>
+  <div class="col-md-6">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: "form-control" %>
+  </div>
+</div>
+
+<% if yield(:path) == signup_users_path %>
+  <%= f.label :email %>
+  <%= f.email_field :email, class: "form-control" %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: "form-control" %>
+
+  <%= f.label :password_confirmation, t(".confirmation") %>
+  <%= f.password_field :password_confirmation, class: "form-control" %>
+<% end %>
+
+<%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

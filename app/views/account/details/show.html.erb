@@ -1,0 +1,20 @@
+<% provide(:path, user_account_details_path(current_user)) %>
+<% provide(:button_text, t(".button_text")) %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render "users/menu" %>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3><%= t ".title" %></h3>
+        </div>
+        <div class="panel-body">
+          <%= render "users/form" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

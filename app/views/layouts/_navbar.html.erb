@@ -34,10 +34,11 @@
                   ><span class="icon icon-person"></span
                 ></a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <%= link_to t("views.layout.client.nav_profile"), root_path, class: "dropdown-item" %>
+                  <%= link_to t("views.layout.client.nav_profile"), user_account_details_path(@current_user), class: "dropdown-item" %>
                   <% if @current_user.is_admin? %>
                     <%= link_to t("views.layout.client.nav_admin") , admin_root_path, class: "dropdown-item" %>
                   <% end %>
+                  <%= link_to t("views.layout.client.nav_orders"), orders_path, class: "dropdown-item" %>
                   <%= link_to t("views.layout.client.nav_logout"), logout_sessions_path, method: :delete, class: "dropdown-item"%>
                 </div>
               </li>
@@ -61,7 +62,7 @@
       </div>
     </div>
   </div>
-  <nav class="site-navigation text-right text-md-center" role="navigation">
+  <nav class="site-navigation text-center text-md-center" role="navigation">
     <div class="container">
       <ul class="site-menu js-clone-nav d-none d-md-block">
         <li class="has-children active">
