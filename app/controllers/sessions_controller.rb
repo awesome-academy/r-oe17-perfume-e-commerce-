@@ -7,12 +7,13 @@ class SessionsController < ApplicationController
       if user.is_active?
         log_in user
         remember_checked user
+        redirect_to user
       else
         message  = t "controllers.client.session.mess_not_activated"
         message += t "controllers.client.session.mess_not_activated2"
         flash[:warning] = message
+        redirect_to root_url
       end
-      redirect_to root_url
     else
       flash.now[:danger] = t "controllers.client.session.flash_invalid_login"
       render :new
