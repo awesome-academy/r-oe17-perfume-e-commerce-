@@ -1,0 +1,6 @@
+$("#cart-text").html("<%= escape_javascript(render "layouts/cart_text") %>");
+$("#line-item").remove()
+$("#total-cost").html("<%= escape_javascript(render "carts/cart_total_cost")%>");
+<% if @order.order_details.empty? %>
+  $("#shopping-cart").html("<%= j render template: "carts/show" %>")
+<% end %>

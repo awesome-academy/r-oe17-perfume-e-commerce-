@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
 
   def show
-    @categories = Category.all
+    @order_detail = current_order.order_details.new
   end
 
   private

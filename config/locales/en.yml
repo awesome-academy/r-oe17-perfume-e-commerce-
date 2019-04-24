@@ -152,6 +152,8 @@ en:
       desc: "desc"
       product_name: "product_name"
       unit_price: "unit_price"
+    product:
+      add_to_cart: "Add To Cart"
   products:
     show:
       brand: "Brand: "
@@ -169,3 +171,32 @@ en:
         significant: false
         strip_insignificant_zeros: false
         unit: "$"
+  models:
+    order_details:
+      product_nil: "is not valid or is not active."
+      order_nil: "is not a valid order."
+  carts:
+    cart_row:
+      delete_btn: "X"
+      confirm: "Are you sure?"
+    cart_total_cost:
+      subtotal: "Subtotal"
+      total: "Total"
+      proceed_to_order: "Proceed To Order"
+      title: "Cart Totals"
+    show:
+      warning1: "There are no items in your shopping cart.  Please "
+      warning2: "and add some items to your cart."
+    cart:
+      th_image: "Image"
+      th_name: "Product"
+      th_price: "Price"
+      th_quantity: "Quantity"
+      th_total: "Total"
+      th_remove: "Remove"
+  order_details:
+    destroy:
+      delete_alert: "Delete failed"
+  products:
+    show:
+      add_to_cart: "Add To Cart"

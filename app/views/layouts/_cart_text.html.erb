@@ -1,0 +1,8 @@
+<%= link_to cart_path, class: "site-cart" do %>
+<span class="icon icon-shopping_cart"></span>
+<% if current_order.order_details.empty? %>
+  <span class="count">0</span>
+<% else %>
+  <span class="count"><%= current_order.order_details.size %></span>
+<% end %>
+<% end %>

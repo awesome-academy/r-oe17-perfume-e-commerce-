@@ -18,5 +18,6 @@ module ROe17PerfumeECommerce
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}").to_s]
     config.assets.paths << Rails.root.join("vendor", "assets", "fonts")
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end

@@ -10,40 +10,42 @@
     <p class="mb-4">
       <%= @product.description %>
     </p>
-    <p><strong class="text-primary h4"><%= number_to_currency(@product.unit_price, locale: :en) %></strong></p>
+    <p>
+      <strong class="text-primary h4"><%= number_to_currency(@product.unit_price, locale: :en) %></strong>
+    </p>
     <div class="mb-1 d-flex">
       <ul>
-        <li><%= t ".brand" %> <%= @product.brand_name %></li>
-        <li><%= t ".company" %> <%= @product.company_name %></li>
-        <li><%= t ".sense" %> <%= @product.sense_name %></li>
+        <li><%= t ".brand" %>
+          <%= @product.brand_name %></li>
+        <li><%= t ".company" %>
+          <%= @product.company_name %></li>
+        <li><%= t ".sense" %>
+          <%= @product.sense_name %></li>
         <li><%= t ".concentration" %><%= @product.concentration%></li>
-        <li><%= t ".weight" %> <%= @product.weight %></li>
+        <li><%= t ".weight" %>
+          <%= @product.weight %></li>
       </ul>
     </div>
+    <%= form_for @order_detail, remote: true do |f| %>
     <div class="mb-5">
-      <div class="input-group mb-3" style="max-width: 120px;">
+      <div class="input-group mb-3" id="product-show-form">
         <div class="input-group-prepend">
           <button class="btn btn-outline-primary js-btn-minus" type="button">
             &minus;
           </button>
         </div>
-        <input
-          type="text"
-          class="form-control text-center"
-          value="1"
-          placeholder=""
-          aria-label="Example text with button addon"
-          aria-describedby="button-addon1"
-        />
+        <%= f.number_field :quantity, class: "form-control text-center", min: 1 %>
         <div class="input-group-append">
           <button class="btn btn-outline-primary js-btn-plus" type="button">
             +
           </button>
         </div>
+        <%= f.hidden_field :product_id, value: @product.id %>
       </div>
     </div>
     <p>
-      <a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a>
+      <%= f.submit t(".add_to_cart"), class: "buy-now btn btn-sm btn-primary" %>
     </p>
   </div>
+<% end %>
 </div>

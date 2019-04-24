@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "about", to: "home#about"
 
   resources :account_activations, only: [:edit]
+  resource :cart, only: [:show]
+  resources :order_details, only: [:create, :update, :destroy]
 
   resources :users, except: [:destroy] do
     collection do

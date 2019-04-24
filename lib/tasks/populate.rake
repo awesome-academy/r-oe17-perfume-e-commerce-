@@ -142,6 +142,15 @@ namespace :populate do
     end
   end
 
+  desc "Seed Data Order Status"
+  task seed_order_status: :environment do
+    OrderStatus.delete_all
+    OrderStatus.create! id: 1, name: "In Progress"
+    OrderStatus.create! id: 2, name: "Placed"
+    OrderStatus.create! id: 3, name: "Shipped"
+    OrderStatus.create! id: 4, name: "Cancelled"
+  end
+
   def data_any? instance
     if instance.any?
       instance.delete_all
