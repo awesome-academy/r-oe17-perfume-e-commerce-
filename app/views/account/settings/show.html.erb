@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render "users/menu" %>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= t ".h_settings" %>
+        </div>
+        <div class="panel-body">
+          <div class="row" style="padding-left:10px">
+            <p><%= t ".p_guideline" %></p>
+            <%= link_to t(".btn_change_password"), user_account_settings_password_edit_path(current_user), class: "btn btn-default"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
