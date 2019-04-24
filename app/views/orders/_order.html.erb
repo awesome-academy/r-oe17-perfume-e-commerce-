@@ -1,0 +1,4 @@
+<td><%= order.ship_name %></td>
+<td><%= order.order_date %></td>
+<td><%= order.order_status.name%></td>
+<td><%= link_to t(".a_details"), order_path(order), class: "btn btn-link" %></td>

@@ -1,5 +1,17 @@
 class OrdersController < ApplicationController
-  before_action :set_order
+  before_action :set_order, only: [:edit, :update]
+
+  def index
+    @orders = Order.by_customer_id(current_user.id)
+  end
+
+  def show
+    @order = Order.find_by(id: params[:id])
+    if @order.nil?
+      flash[:danger] = t ".no_record_found"
+      redirect_to root_url
+    end
+  end
 
   def edit
     @order = current_order

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <table class="table table-bordered">
+      <thead>
+        <th><%= t ".th_name" %></th>
+        <th><%= t ".th_order_date" %></th>
+        <th><%= t ".th_order_status" %></th>
+        <th colspan="2"></th>
+      </thead>
+      <tbody>
+        <% @orders.each do |o| %>
+          <tr>
+            <%= render "order", order: o %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
