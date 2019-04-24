@@ -6,6 +6,8 @@ class Order < ApplicationRecord
   validates :ship_city, length: {maximum: Settings.model.order.ship_city_maxlength}
   validates :ship_name, length: {maximum: Settings.model.order.ship_name_maxlength}
 
+  validates_presence_of :ship_address, :ship_city, :ship_name
+
   before_validation :update_order_status
   before_save :set_order_date, :update_subtotal
 

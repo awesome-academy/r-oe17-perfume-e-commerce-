@@ -24,9 +24,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <button class="btn btn-primary btn-lg py-3 btn-block">
-          <%= t ".proceed_to_order" %>
-        </button>
+        <%= link_to t(".proceed_to_order"), new_order_path, class: "btn btn-primary btn-lg py-3 btn-block" %>
       </div>
     </div>
   </div>

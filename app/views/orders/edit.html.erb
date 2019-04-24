@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-2">
+    <%= form_for @order, url: order_path(@order), html: {class: "form-horizontal"} do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="form-group">
+      <%= f.label :ship_name, class: "col-xs-12 col-sm-3 col-md-2 control-label" %>
+      <div class="col-xs-12 col-sm-4 col-md-6">
+        <%= f.text_field :ship_name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :ship_city, class: "col-xs-12 col-sm-3 col-md-2 control-label" %>
+      <div class="col-xs-12 col-sm-4 col-md-6">
+        <%= f.text_field :ship_city, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :ship_address, class: "col-xs-12 col-sm-3 col-md-2 control-label" %>
+      <div class="col-xs-12 col-sm-4 col-md-6">
+        <%= f.text_field :ship_address, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :required_date, class: "col-xs-12 col-sm-3 col-md-2 control-label" %>
+      <div class="col-xs-12 col-sm-4 col-md-6">
+        <%= f.date_select :required_date, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit t(".update_your_order"), class: "buy-now btn btn-sm btn-primary" %>
+    </div>
+  <% end %>
+</div>
+</div>
