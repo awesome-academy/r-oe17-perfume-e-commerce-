@@ -1,0 +1,5 @@
+<div class="list-group">
+  <div class="list-group-item"><h4><strong>Account Management</strong></h2></div>
+  <%= link_to "Customer Info", user_account_details_path(current_user), class: "list-group-item active" %>
+  <%= link_to "Email Services", user_account_email_path(current_user), class: "list-group-item"%>
+</div>
