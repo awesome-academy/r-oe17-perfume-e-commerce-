@@ -14,7 +14,7 @@ class User < ApplicationRecord
             presence: true
   validates :last_name, length: {maximum: Settings.model.user.lastname_max_length},
             presence: true
-  validates :password, presence: true, length: {minimum: Settings.model.user.password_min_length}
+  validates :password, allow_nil: true, presence: true, length: {minimum: Settings.model.user.password_min_length}
 
   before_create :create_activation_digest
   before_save :downcase_email, :set_date_joined

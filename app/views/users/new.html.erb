@@ -1,33 +1,7 @@
-<h1 class="text-center"><%= t "views.user.new.sign_up" %></h1>
+<% provide(:path, signup_users_path) %>
+<% provide(:button_text, "Create My Account") %>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3" style="padding-bottom: 10px">
-    <%= form_with model: @user, local: true do |f| %>
-      <%= render "shared/error_messages", object: f.object %>
-
-      <%= f.label :username %>
-      <%= f.text_field :username, class: "form-control" %>
-
-      <div class="row">
-        <div class="col-md-6">
-          <%= f.label :first_name %>
-          <%= f.text_field :first_name, class: "form-control" %>
-        </div>
-        <div class="col-md-6">
-          <%= f.label :last_name %>
-          <%= f.text_field :last_name, class: "form-control" %>
-        </div>
-      </div>
-
-      <%= f.label :email %>
-      <%= f.email_field :email, class: "form-control" %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: "form-control" %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: "form-control" %>
-
-      <%= f.submit t("views.user.new.create_account"), class: "btn btn-primary" %>
-    <% end %>
+  <div class="col-md-6 col-md-offset-3">
+    <%= render "form" %>
   </div>
 </div>

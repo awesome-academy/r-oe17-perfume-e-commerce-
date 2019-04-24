@@ -117,7 +117,6 @@ en:
         mod: "Moderator"
         flash_alert_login: "Please Login"
       user:
-        flash_user_doesnt_exits: "User doesn't exist"
     client:
       session:
         flash_invalid_login: "Invalid email/password combination"
@@ -125,6 +124,7 @@ en:
         mess_not_activated2: "Check your email for the activation link."
       user:
         remind_activation: "Please check your email to activate your account."
+        flash_user_doesnt_exist: "User doesn't exist"
     system:
       account_activation:
         activated: "Account activated!"
@@ -161,6 +161,7 @@ en:
       sense: "Sense: "
       concentration: "Concentration: "
       weight: "Weight: "
+      add_to_cart: "Add To Cart"
   number:
     currency:
       format:
@@ -197,11 +198,18 @@ en:
   order_details:
     destroy:
       delete_alert: "Delete failed"
-  products:
-    show:
-      add_to_cart: "Add To Cart"
   orders:
     update:
       update_success: "Update order successfully"
     edit:
       update_your_order: "Update your order"
+  account:
+    details:
+      show:
+        button_text: Update
+        title: User Information
+      update:
+        update_success: Update successfully
+  users:
+    form:
+      confirmation: "Confirmation"
