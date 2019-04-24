@@ -11,6 +11,11 @@ class Order < ApplicationRecord
   before_validation :update_order_status
   before_save :set_order_date, :update_subtotal
 
+  scope :by_customer_id, (lambda do |id|
+    includes(:order_status)
+    .where("orders.customer_id=?", id)
+  end)
+
   def subtotal
     order_details.map{|od| od.valid? ? (od.quantity * od.unit_price) : 0}.sum
   end
