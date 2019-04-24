@@ -1,0 +1,10 @@
+<% provide(:path, admin_brand_path(@brand)) %>
+<% provide(:button_text, t("views.admin.category.new.b_submit")) %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2><%= t "views.admin.brand.edit.p_title" %></h2>
+  </div>
+  <div class="panel-body">
+    <%= render "form" %>
+  </div>
+</div>

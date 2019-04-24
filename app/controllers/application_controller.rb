@@ -19,4 +19,11 @@ class ApplicationController < ActionController::Base
       Order.new
     end
   end
+
+  def logged_in_user
+    return unless logged_in?
+
+    flash[:danger] = t "controller.user.please_log_in"
+    redirect_to login_url
+  end
 end
