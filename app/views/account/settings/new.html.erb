@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render "users/menu" %>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= t ".h_change_password"%>
+        </div>
+        <div class="panel-body">
+          <%= form_for @password_form, url: user_account_settings_password_edit_path(current_user), method: :post, html: {class: "form-horizontal center"} do |f| %>
+            <%= render "shared/error_messages", object: f.object %>
+            <div class="form-group">
+              <%= f.label :original_password, class: "col-xs-12 col-sm-3 col-md-2 control-label" %>
+              <div class="col-xs-12 col-sm-4 col-md-6">
+                <%= f.password_field :original_password, class: "form-control"%>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :new_password, class: "col-xs-12 col-sm-3 col-md-2 control-label" %>
+              <div class="col-xs-12 col-sm-4 col-md-6">
+                <%= f.password_field :new_password, class: "form-control"%>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :new_password_confirmation, class: "col-xs-12 col-sm-3 col-md-2 control-label" %>
+              <div class="col-xs-12 col-sm-4 col-md-6">
+                <%= f.password_field :new_password_confirmation, class: "form-control"%>
+              </div>
+            </div>
+            <%= f.submit t(".btn_change"), class: "btn btn-default" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
