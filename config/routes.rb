@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resource :cart, only: [:show]
   resources :order_details, only: [:create, :update, :destroy]
+  resources :orders
 
   resources :users, except: [:destroy] do
     collection do

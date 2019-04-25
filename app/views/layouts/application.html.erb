@@ -4,29 +4,30 @@
     <title>ROe17PerfumeECommerce</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body>
-  <div class="site-wrap">
-    <%= render "layouts/navbar" %>
-
-    <div class="bg-light py-3">
-      <div class="container">
-        <div class="row">
-          <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>"><%= value %></div>
-          <% end %>
+    <div class="site-wrap">
+      <%= render "layouts/navbar" %>
+      <div class="bg-light py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <% flash.each do |key, value| %>
+                <div class="alert alert-<%= key %>"><%= value %></div>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="site-section">
-      <div class="container">
-        <%= yield %>
+      <div class="site-section">
+        <div class="container">
+          <%= yield %>
+        </div>
       </div>
-    </div>
 
-    <%= render "layouts/footer" %>
-  </div>
+      <%= render "layouts/footer" %>
+    </div>
   </body>
 </html>

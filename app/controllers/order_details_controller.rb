@@ -3,7 +3,7 @@ class OrderDetailsController < ApplicationController
 
   def create
     @order_detail = @order.order_details.new(order_detail_params)
-    @order.save
+    @order.save(validate: false)
     session[:order_id] = @order.id
   end
 

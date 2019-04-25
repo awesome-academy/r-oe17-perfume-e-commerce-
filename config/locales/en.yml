@@ -200,3 +200,8 @@ en:
   products:
     show:
       add_to_cart: "Add To Cart"
+  orders:
+    update:
+      update_success: "Update order successfully"
+    edit:
+      update_your_order: "Update your order"
