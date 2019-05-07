@@ -3,7 +3,7 @@ class Category < ApplicationRecord
 
   has_many :products
   has_many :children, class_name: "Category", foreign_key: :parent_id
-  belongs_to :parent, class_name: "Category"
+  belongs_to :parent, class_name: "Category", optional: true
 
   validates :category_name, length: {maximum: Settings.model.category.name_maxlength},
             presence: true
