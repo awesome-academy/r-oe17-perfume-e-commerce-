@@ -15,6 +15,10 @@ class Order < ApplicationRecord
     order_details.map{|od| od.valid? ? (od.quantity * od.unit_price) : 0}.sum
   end
 
+  def order_details_changed?
+    !order_details.empty?
+  end
+
   private
   def set_order_date
     self.order_date = DateTime.now
