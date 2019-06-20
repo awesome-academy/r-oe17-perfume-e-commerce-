@@ -56,6 +56,37 @@ en:
           b_submit: "Submit"
         edit:
           p_title: "Update category"
+      brand:
+        index:
+          tite: "List of Brand"
+          add_new_brand: "Add new brand"
+          h_name: "Name"
+          h_country: "Country"
+          h_description: "Description"
+          h_homepage: "Homepage"
+        new:
+          p_title: "Add new brand"
+          b_submit: "Submit"
+        edit:
+          p_title: "Update brand"
+        destroy:
+          a_delete: "Are you sure?"
+      supplier:
+        index:
+          tite: "List of Supplier"
+          add_new_supplier: "Add new supplier"
+          h_name: "Company"
+          h_contact: "Contact"
+          h_address: "Address"
+          h_city: "City"
+          h_homepage: "Homepage"
+        new:
+          p_title: "Add new supplier"
+          b_submit: "Submit"
+        edit:
+          p_title: "Update supplier"
+        destroy:
+          a_delete: "Are you sure?"
     layout:
       admin:
         title: "AdminLTE 2 | Dashboard"
@@ -79,6 +110,7 @@ en:
         nav_admin: "Admin Panel"
         nav_login: "Login"
         nav_logout: "Logout"
+        nav_orders: "Orders"
         footer_nav: "Navigation"
         footer_cart: "Shopping Cart"
         footer_feature: "Features"
@@ -118,6 +150,18 @@ en:
         flash_alert_login: "Please Login"
       user:
         flash_user_doesnt_exits: "User doesn't exist"
+      category:
+        create_success: "Create succesfully"
+        update_success: "Update successfully"
+        set_category_invalid: "Category doesn't existed"
+      brand:
+        create_success: "Create succesfully"
+        update_success: "Update successfully"
+        set_brand_invalid: "Brand doesn't existed"
+        delete_success: "Delete successfully"
+        delete_unsuccess: "Delete unsuccessfully"
+      supplier:
+        create_success: "Create succesfully"
     client:
       session:
         flash_invalid_login: "Invalid email/password combination"
@@ -125,6 +169,7 @@ en:
         mess_not_activated2: "Check your email for the activation link."
       user:
         remind_activation: "Please check your email to activate your account."
+        flash_user_doesnt_exist: "User doesn't exist"
     system:
       account_activation:
         activated: "Account activated!"
@@ -161,6 +206,7 @@ en:
       sense: "Sense: "
       concentration: "Concentration: "
       weight: "Weight: "
+      add_to_cart: "Add To Cart"
   number:
     currency:
       format:
@@ -197,11 +243,54 @@ en:
   order_details:
     destroy:
       delete_alert: "Delete failed"
-  products:
-    show:
-      add_to_cart: "Add To Cart"
   orders:
     update:
       update_success: "Update order successfully"
     edit:
       update_your_order: "Update your order"
+    show:
+      no_record_found: No record found.
+      th_image: Image
+      th_name: Product
+      th_price: Price
+      th_quantity: Quantity
+      th_total: Total
+      title: Cart Total
+      subtotal: Subtotal
+      total: Total
+    order:
+      a_details: Details
+    index:
+      th_name: Name
+      th_order_date: Order Date
+      th_order_status: Order Status
+  account:
+    details:
+      show:
+        button_text: Update
+        title: User Information
+      update:
+        update_success: Update successfully
+    email:
+      show:
+        email_details_title: Email Details
+        change_your_email: Change your email
+        p_change_email: Click this button bellow to change your current email
+        btn_change_email: Change my email
+      edit:
+        h_change_email_address: Change email address
+      update:
+        update_success: Update success! Please check your email for confirmation
+    settings:
+      create:
+        update_success: Successfully changed password.
+      new:
+        h_change_password: Change Password
+        btn_change: Change
+      show:
+        h_settings: Settings
+        p_guideline: Click this button bellow to change your current password
+        btn_change_password: Change my password
+  users:
+    form:
+      confirmation: "Confirmation"

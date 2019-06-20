@@ -1,0 +1,28 @@
+<%= form_for(@supplier, url: yield(:path), html: {class: "form-horizontal"}) do |f| %>
+   <%= render "shared/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label :company_name, class: "col-xs-12 col-sm-3 col-md-2 control-label" %>
+    <div class="col-xs-12 col-sm-4 col-md-6">
+      <%= f.text_field :company_name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_name, class: "col-xs-12 col-sm-3 col-md-2 control-label" %>
+    <div class="col-xs-12 col-sm-4 col-md-6">
+      <%= f.text_field :contact_name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :city, class: "col-xs-12 col-sm-3 col-md-2 control-label" %>
+    <div class="col-xs-12 col-sm-4 col-md-6">
+      <%= f.text_field :city, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :homepage, class: "col-xs-12 col-sm-3 col-md-2 control-label" %>
+    <div class="col-xs-12 col-sm-4 col-md-6">
+      <%= f.text_field :homepage, class: "form-control" %>
+    </div>
+  </div>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

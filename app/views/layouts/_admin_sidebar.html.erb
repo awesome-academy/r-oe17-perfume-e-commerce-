@@ -39,7 +39,13 @@
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><%= link_to t("views.layout.admin.catalog_treeview.category"), admin_categories_path %></li>
+          <li><%= link_to "Category", admin_categories_path %></li>
+          <li><%= link_to "Brand", admin_brands_path %></li>
+          <li><%= link_to "Suppliers", admin_suppliers_path %></li>
+        </ul>
+        <ul class="treeview-menu">
+          <li><%= link_to "Product", admin_products_path %></li>
+          <li><a href="#"><%= t "views.admin.layout.treeview_child" %></a></li>
         </ul>
       </li>
     </ul><!-- /.sidebar-menu -->

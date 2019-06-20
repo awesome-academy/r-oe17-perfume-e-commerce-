@@ -1,0 +1,70 @@
+<h2>Order Details</h2>
+<ul>
+  <li>Ship Name:
+    <%= @order.ship_name %></li>
+  <li>Ship Address:
+    <%= @order.ship_address %></li>
+  <li>Ship City:
+    <%= @order.ship_city %></li>
+  <li>Order Date:
+    <%= Date.parse(@order.order_date.to_s) %></li>
+  <li>Require Date:
+    <%=Date.parse(@order.required_date.to_s) %></li>
+  <li>Status Order:
+    <%= @order.order_status.name %></li>
+</ul>
+
+<div class="row mb-5">
+  <form class="col-md-12" method="post">
+    <div class="site-blocks-table">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="product-thumbnail"><%= t ".th_image" %></th>
+            <th class="product-name"><%= t ".th_name" %></th>
+            <th class="product-price"><%= t ".th_price" %></th>
+            <th class="product-quantity"><%= t ".th_quantity" %></th>
+            <th class="product-total"><%= t ".th_total" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order.order_details.each do |order_detail| %>
+            <tr>
+              <%= render "order_item", product: order_detail.product, order_detail: order_detail, show_total: true %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </form>
+</div>
+<div class="row">
+  <div class="col-md-6 pl-5">
+    <div class="row justify-content-end">
+      <div class="col-md-7">
+        <div class="row">
+          <div class="col-md-12 text-right border-bottom mb-5">
+            <h3 class="text-black h4 text-uppercase"><%= t ".title" %></h3>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <span class="text-black"><%= t ".subtotal" %></span>
+          </div>
+          <div class="col-md-6 text-right">
+            <strong class="text-black"><%= @order.subtotal %></strong>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-6">
+            <span class="text-black"><%= t ".total" %></span>
+          </div>
+          <div class="col-md-6 text-right">
+            <strong class="text-black"><%= @order.subtotal %></strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
