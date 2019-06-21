@@ -5,6 +5,8 @@ class Category < ApplicationRecord
   has_many :children, class_name: "Category", foreign_key: :parent_id
   belongs_to :parent, class_name: "Category"
 
+  scope :ordered_by_name, ->{order(category_name: :asc)}
+
   validates :category_name, length: {maximum: Settings.model.category.name_maxlength},
             presence: true
   validates :description, length: {maximum: Settings.model.category.desc_maxlength}

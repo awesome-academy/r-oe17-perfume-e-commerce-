@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render "users/menu" %>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= t ".email_details_title" %>
+        </div>
+        <div class="panel-body">
+          <%= form_with model: current_user do |f| %>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <%= f.label :email %>
+              <%= f.email_field :email, readonly: true, class: "form-control"%>
+            </div>
+            <div class="col-md-6">
+              <%= f.label "Activation" %>
+              <%= f.check_box :is_active, disabled: true, class: "checkbox" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= t ".change_your_email" %>
+      </div>
+      <div class="panel-body">
+        <div class="row" style="padding-left:10px">
+          <p><%= t ".p_change_email" %></p>
+          <%= link_to t(".btn_change_email"), user_account_email_edit_path(current_user), class: "btn btn-default"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
