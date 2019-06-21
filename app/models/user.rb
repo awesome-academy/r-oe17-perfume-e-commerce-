@@ -14,7 +14,7 @@ class User < ApplicationRecord
             presence: true
   validates :last_name, length: {maximum: Settings.model.user.lastname_max_length},
             presence: true
-  validates :password, presence: true, length: {minimum: Settings.model.user.password_min_length}
+  validates :password, allow_nil: true, presence: true, length: {minimum: Settings.model.user.password_min_length}
 
   before_create :create_activation_digest
   before_save :downcase_email, :set_date_joined
@@ -53,6 +53,12 @@ class User < ApplicationRecord
   def activate
     update_attribute(:is_active, true)
     update_attribute(:activated_at, Time.zone.now)
+  end
+
+  def change_email
+    update_attribute(:is_active, false)
+    new_digest = send("create_activation_digest")
+    update_attribute(:activation_digest, new_digest)
   end
 
   def send_activation_email
