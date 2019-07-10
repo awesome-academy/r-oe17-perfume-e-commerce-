@@ -1,0 +1,20 @@
+<h2><%= t "views.admin.supplier.index.tite"%></h2>
+<div class="div">
+  <%= link_to t("views.admin.supplier.index.add_new_supplier"), new_admin_supplier_path, class: "btn btn-primary"%>
+</div>
+<%= paginate @suppliers %>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= t "views.admin.supplier.index.h_name" %></th>
+      <th><%= t "views.admin.supplier.index.h_contact" %></th>
+      <th><%= t "views.admin.supplier.index.h_city" %></th>
+      <th><%= t "views.admin.supplier.index.h_homepage" %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @suppliers %>
+  </tbody>
+</table>
+<%= paginate @suppliers %>

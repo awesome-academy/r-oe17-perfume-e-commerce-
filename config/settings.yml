@@ -27,7 +27,7 @@ model:
     paginate_size: 10
   brand:
     name_maxlength: 45
-    desc_maxlength: 20
+    desc_maxlength: 100
     desc_minlength: 3
     homepage_maxlength: 200
     country_maxlength: 50
