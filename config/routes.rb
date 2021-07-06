@@ -8,10 +8,18 @@ Rails.application.routes.draw do
   resources :order_details, only: [:create, :update, :destroy]
   resources :orders
 
-  resources :users, except: [:destroy] do
+  resources :users, except: [:index] do
     collection do
       get  "/signup",  to: "users#new"
       post "/signup",  to: "users#create"
+    end
+
+    namespace :account do
+      get "/details", to: "details#show"
+      put "/details", to: "details#update"
+      patch "/details", to: "details#update"
+
+      get "/email", to: "email#show"
     end
   end
 
