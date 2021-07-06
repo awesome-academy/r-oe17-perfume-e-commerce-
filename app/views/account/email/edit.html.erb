@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render "users/menu" %>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= t ".h_change_email_address" %>
+        </div>
+        <div class="panel-body">
+          <%= form_with model: @user, url: user_account_email_path(current_user), local: true do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+          <div class="col-md-6 form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, class: "form-control"%>
+          </div>
+          <div class="col-md-6 form-group">
+            <%= f.label "Password Confirm" %>
+            <%= f.password_field :password, class: "form-control"%>
+          </div>
+          <%= f.submit "Change", class: "btn btn-default" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+</div>
